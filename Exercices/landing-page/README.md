@@ -18,7 +18,7 @@ Votre designer vous à envoyé le design en screenshot. A vous de le reproduire 
     * Affichez quelques pochettes d'album que vous aimez
     * Placez un texte d'accroche
   * **comments.html**: la page avec les commentaires et la possibilités d'en rajouter.
-    * Affichez un formulaire avec 2 champs ("auteur" et "message")
+    * Affichez un formulaire avec 2 champs ("auteur" et "comment")
     * Placez un bouton pour envoyez votre formulaire.
     * Affichez les commentaires récupérés par l'API (voir plus bas) 
 * Il vous faut une feuille de style **"style.css"**
