@@ -19,13 +19,23 @@ document.getElementById("submit-btn").addEventListener("click", () => console.lo
 // ok
 
 //6. Dans votre fichier script.js créez une nouvelle balise à l'aide de la méthode createElement et attribuez lui le texte de votre choix à l'aide de la méthode createNodeText, ensuite greffez le texte à la div en utilisant la méthode appendChild
+let newDiv = document.createElement("div");
+let text = document.createTextNode("Et voici un texte");
+newDiv.appendChild(text);
+console.log(newDiv);
 
 // 7. Créez une variable myHeaders et passez lui la paire de clé/valeur suivante: "Content-Type": "application/json"
+let myHeaders = new Headers({ "Content-Type": "application/json" });
 
 // 8. Créez une requête fetch à l'aide de la méthode post et passez lui la variable bodyToJson en valeur de la clé body
-
+fetch("https://quotes-light-api.herokuapp.com/api/comments/", {
+  method: "POST",
+  headers: myHeaders,
+  body: bodyToJson
+})
 
 // Consignes exercices globaux:
+// cf. exercices dans script.js de la Landing Page
 
 // naviguez jusqu'à votre dossier: exercices landing page, lisez les consignes relatives à l'intégration de votre maquette. Ensuite dans le fichier script.js réalisez les consignes suivantes:
 
@@ -48,3 +58,5 @@ document.getElementById("submit-btn").addEventListener("click", () => console.lo
 //9. Testez votre code, ouvrez votre index.html dans votre navigateur, ouvrez l'inspecteur d'élément, allez dans l'onglet "console". Maintenant, remplissez votre formulaire avec les valeurs demandées (l'auteur, et le commentaire). Clickez sur le bouton submit, une erreur est elle renvoyée? Si non allez dans l'onglet network et vérifier le statut de votre requête, si il est défini sur 200 c'est que votre requête a fonctionné!
 
 //10. Maintenant, créez une méthode fetch qui va aller récupérer toutes les données de l'API, comme la semaine dernière. Elle va vous retourner un tableau d'objets. Pour chaque élément de ce tableau, créez dynamiquement une div pour afficher le commentaire dans votre index.html
+
+// cf. exercices dans script.js de la Landing Page
