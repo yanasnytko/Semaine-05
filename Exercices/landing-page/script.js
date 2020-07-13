@@ -14,7 +14,17 @@ document.getElementById("submit-btn").addEventListener("click", () => {
 
   //4. A l'intérieur de cette écoute, vous allez créer une variable "formAuteurValue", une variable formCommentValue et aller pointer vers les inputs qui ont comme id auteur et comment, ensuite récupérer la valeur de ces input et stockez là dans les variables que vous venez de créer
   let formAuteurValue = document.getElementById("auteur").value;
+  /*   if (formAuteurValue === null || formAuteurValue === undefined) {
+      formAuteurValue = "Anonyme";
+    } else {
+      formAuteurValue = document.getElementById("auteur").value;
+    } */
   let formCommentValue = document.getElementById("comment").value;
+  /*   if (formCommentValue === null || formCommentValue === undefined) {
+      formCommentValue = "Anonyme";
+    } else {
+      formCommentValue = document.getElementById("comment").value;
+    } */
 
   //5. Créez une variable "body" de type objet. Dans cette variable passé comme clé: auteur et comment, ensuite attribuez les valeurs de formAuteurValue et formCommentValue aux clés correspondantes
   let body = {
@@ -45,14 +55,15 @@ fetch("https://quotes-light-api.herokuapp.com/api/comments/", { method: "GET" })
   .then(response => {
     let data = response;
     data.forEach(element => {
+      // Recuperation de l'auteur
       let newAuteurDiv = document.createElement("div");
       let auteur = document.createTextNode(element.auteur);
       newAuteurDiv.appendChild(auteur);
-
+      // Recuperation du commentaire
       let newCommentDiv = document.createElement("div");
       let comment = document.createTextNode(element.comment);
       newCommentDiv.appendChild(comment);
-
+      // Affichage
       let existingDiv = document.getElementById("balise");
       document.body.insertBefore(newAuteurDiv, existingDiv.nextElementSibling);
       document.body.insertBefore(newCommentDiv, existingDiv.nextElementSibling);

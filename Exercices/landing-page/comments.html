@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>Comments of my Landing Page</title>
 </head>
 
 <body>
@@ -26,14 +26,20 @@
   </header>
 
   <main>
-    <img src="" alt="Decoratif woman">
-    <h2>
-      Feel the music
-    </h2>
-    <h3>
-      Stream over 20 thousand songs in one click
-    </h3>
-    <a href="./comments.html" id="joinNow">Join Now</a>
+    <p>
+      Join the <span>fun.</span>
+    </p>
+    <form action="" id="my-form">
+      <label for="auteur">Name:</label>
+      <input type="text" name="auteur" id="auteur"> <br>
+      <label for="comment">Comment:</label>
+      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+    </form>
+    <button id="submit-btn">
+      Comment
+    </button>
+    <div id="balise">
+    </div>
   </main>
 
   <footer>
@@ -57,5 +63,7 @@
     </div>
   </footer>
 </body>
+
+<script src="script.js"></script>
 
 </html>
