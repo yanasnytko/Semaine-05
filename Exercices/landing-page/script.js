@@ -92,6 +92,6 @@ fetch("https://quotes-light-api.herokuapp.com/api/comments/", { method: "GET" })
         })
       })
     } else {
-      console.log('oupsy');
+      console.log('error of Delete button');
     };
   })
