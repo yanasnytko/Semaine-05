@@ -55,17 +55,43 @@ fetch("https://quotes-light-api.herokuapp.com/api/comments/", { method: "GET" })
   .then(response => {
     let data = response;
     data.forEach(element => {
+      let existingDiv = document.getElementById("balise");
       // Recuperation de l'auteur
       let newAuteurDiv = document.createElement("div");
+      newAuteurDiv.setAttribute("class", "auteur");
+      document.body.insertBefore(newAuteurDiv, existingDiv.nextElementSibling);
       let auteur = document.createTextNode(element.auteur);
       newAuteurDiv.appendChild(auteur);
+
       // Recuperation du commentaire
       let newCommentDiv = document.createElement("div");
+      newCommentDiv.setAttribute("class", "comment")
+      document.body.insertBefore(newCommentDiv, existingDiv.nextElementSibling);
       let comment = document.createTextNode(element.comment);
       newCommentDiv.appendChild(comment);
-      // Affichage
-      let existingDiv = document.getElementById("balise");
-      document.body.insertBefore(newAuteurDiv, existingDiv.nextElementSibling);
-      document.body.insertBefore(newCommentDiv, existingDiv.nextElementSibling);
+
+      // Creation de Delete
+      let deleteButton = document.createElement("button");
+      document.body.insertBefore(deleteButton, existingDiv.nextElementSibling);
+      deleteButton.textContent = "Delete";
+      deleteButton.setAttribute("class", "delete")
+      deleteButton.setAttribute("name", "delete-btn");
+      deleteButton.setAttribute("value", element.id);
     })
+  })
+  .then(response => {
+    let deleteTable = document.getElementsByName("delete-btn");
+    if (deleteTable.length > 0) {
+      deleteTable.forEach(element => {
+        element.addEventListener("click", () => {
+          let id = element.value;
+          fetch(`https://quotes-light-api.herokuapp.com/api/comments/${id}`, { method: "DELETE" })
+            .then(response => {
+              document.location.reload(true);
+            });
+        })
+      })
+    } else {
+      console.log('oupsy');
+    };
   })
