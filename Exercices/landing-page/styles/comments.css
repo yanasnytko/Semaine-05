@@ -1,0 +1,38 @@
+main {
+  padding: 0 7.5%;
+}
+
+/* Comments */
+.auteur, .comment, .delete {
+  position: relative;
+  top: 88vh;
+  color: #EAE3E1;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  margin: 0 7.5%;
+}
+
+.auteur {
+  font-weight: 600;
+}
+
+.comment {
+
+}
+
+.delete {
+  text-transform: uppercase;
+  font-weight: 600;
+  background: #276A8D;
+  border-radius: 4px;
+  display: inline-block;
+  width: 60px;
+  height: 3vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}

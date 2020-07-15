@@ -1,3 +1,4 @@
+/* STRUCTURE */
 body {
   width: 100%;
   height: 100vh;
@@ -7,7 +8,6 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 36px;
 }
 a {
   color: #EAE3E1;
@@ -22,13 +22,15 @@ header, #m-header__logo, nav, footer, #o-medias {
   width: 15px;
 }
 
+/* Header */
 header {
   width: 85%;
   height: 7vh;
   margin: 0 auto;
   position: relative;
-  top: 5%;
+  top: 3vh;
   justify-content: space-between;
+  z-index: 1;
 }
 #a-header__logo--img {
   width: 40px;
@@ -48,14 +50,16 @@ nav {
   margin-left: 10%;
 }
 
+/* Footer */
 footer {
   width: 100%;
-  height: 12%;
+  height: 12vh;
   background: #276A8D;
   font-weight: 600;
   justify-content: space-between;
   position: fixed;
   bottom: 0;
+  z-index: 1;
 }
 #o-navSup {
   margin-left: 7.5%;
@@ -71,4 +75,12 @@ footer {
 }
 footer .picto {
   margin-right: 8px;
+}
+
+/* MAIN */
+main {
+  position: absolute;
+  width: 100%;
+  height: 78vh;
+  top: 10vh;
 }
