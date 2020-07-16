@@ -1,9 +1,13 @@
 /* Accueil */
+main {
+  z-index: 1;
+}
 #m-home__img {
   height: 65vh;
   position: absolute;
   bottom: 0;
   margin-left: 7.5%;
+  z-index: -1;
 }
 #m-home__text {
   margin-left: 50%;
@@ -34,4 +38,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#a-home__text--button:hover {
+  transform: scale(1.1);
+  font-size: 26px;
 }

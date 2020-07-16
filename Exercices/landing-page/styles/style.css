@@ -13,6 +13,14 @@ a {
   color: #EAE3E1;
   text-decoration: none;
 }
+a:hover {
+  font-size: 14px;
+  font-weight: bold;
+}
+.here {
+  color: #B38244;
+  font-weight: bold;
+}
 
 header, #m-header__logo, nav, footer, #o-medias {
   display: flex;
@@ -20,6 +28,9 @@ header, #m-header__logo, nav, footer, #o-medias {
 }
 .picto {
   width: 15px;
+}
+.picto:hover {
+  width: 20px;
 }
 
 /* Header */

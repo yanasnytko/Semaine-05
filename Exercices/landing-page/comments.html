@@ -23,7 +23,7 @@
       <a href="./discover.html" title="Discover music" class="m-nav__items">
         Discover
       </a>
-      <a href="./comments.html" title="See comments of other people" class="m-nav__items">
+      <a href="./comments.html" title="See comments of other people" class="m-nav__items here">
         Comments
       </a>
       <a href="#" title="Musics" class="m-nav__items">
@@ -33,20 +33,19 @@
   </header>
 
   <main id="comments">
-    <p>
-      Join the <span>fun.</span>
+    <p id="m-comments__hookTitle">
+      Join the <span id="o-comments__hookTitle--color">fun.</span>
     </p>
-    <div id="o-form">
-      <form action="" id="my-form" name="commentForm">
-        <label for="auteur">Name:</label>
-        <input type="text" name="auteur" id="auteur" required placeholder="Your name"> <br>
-        <label for="comment">Comment:</label>
-        <textarea name="comment" id="comment" cols="30" rows="10" required placeholder="A comment..."></textarea>
-      </form>
+    <form action="" id="my-form" name="commentForm">
+      <label for="auteur" class="a-form__form--item">Name:</label>
+      <input type="text" name="auteur" id="auteur" required placeholder="Your name" class="a-form__form--item"> <br>
+      <label for="comment" class="a-form__form--item">Comment:</label>
+      <textarea name="comment" id="comment" cols="30" rows="10" required placeholder="A comment..."
+        class="a-form__form--item"></textarea>
       <button id="submit-btn" type="submit" for="commentForm">
         Comment
       </button>
-    </div>
+    </form>
     <div id="balise">
     </div>
   </main>
