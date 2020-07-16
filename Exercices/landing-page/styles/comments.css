@@ -22,7 +22,7 @@ main {
 
 }
 
-.delete {
+.delete, #submit-btn {
   text-transform: uppercase;
   font-weight: 600;
   background: #276A8D;
@@ -35,4 +35,10 @@ main {
   align-items: center;
   justify-content: center;
   border: none;
+}
+
+#submit-btn {
+  color: #EAE3E1;
+  width: 100px;
+  height: 5vh;
 }
