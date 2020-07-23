@@ -141,6 +141,12 @@ $(function(){
 });
 ```
 
+NPO: ajouter la ligne qui permet d'inclure votre page script à **chacune de vos pages**.
+
+```html
+<script src="script.js"></script>
+```
+
 Ensuite il faut ajouter une `div` avec les ID définit plus haut à **chacune de vos pages** (index/discover/comments) pour définir l'endroit où le contenu de vos pages header et footer apparaîtront.
 
 ```html
