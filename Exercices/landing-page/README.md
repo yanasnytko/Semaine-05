@@ -124,7 +124,7 @@ body{
 
 ### En Jquery
 
-Voici une autre solution sur laquelle on ne va pas passer des heures au niveaux théorie, mais en tout cas elle est fonctionnelle est plus simple à mettre en place que les iframes vue plus haut.
+Voici une autre solution en Jquery qui est plus simple à mettre en place que les iframes vue plus haut.
 
 Ajouter cette balise scripts à votre `<head>` pour inclure Jquerry à **chacune de vos pages** (index/discover/comments).
 
