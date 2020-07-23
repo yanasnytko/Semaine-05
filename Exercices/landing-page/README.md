@@ -126,21 +126,26 @@ body{
 
 Voici une autre solution sur laquelle on ne va pas passer des heures au niveaux théorie, mais en tout cas elle est fonctionnelle est plus simple à mettre en place que les iframes vue plus haut.
 
-Ajouter ces deux balises scripts à votre `<head>`
+Ajouter cette balise scripts à votre `<head>` pour inclure Jquerry à **chacune de vos pages** (index/discover/comments).
 
 ```html
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script>
-    $(function(){
-      $("#header").load("header.html"); 
-    });
-  </script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crosso
 ```
 
-Ensuite il faut ajouter une `div` avec l'ID définit plus haut.
+Créez une page `script.js`et ajoutez ce bout de code.
+
+```js
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+```
+
+Ensuite il faut ajouter une `div` avec les ID définit plus haut à **chacune de vos pages** (index/discover/comments) pour définir l'endroit où le contenu de vos pages header et footer apparaîtront.
 
 ```html
 <div id="header"></div>
+<div id="footer"></div>
 ```
 
-Vous pouvez maintenant créer une page `header.html` et elle sera incluse à l'endroit où vous avez placé votre `div`
+Vous pouvez maintenant créer une page `header.html` et `footer.html` et elles seront incluses à l'endroit où vous avez placé votre `div`.
