@@ -43,6 +43,8 @@ Votre designer vous à envoyé le design en screenshot. A vous de le reproduire 
 
 ## Petit hack pour répéter son header/footer sur plusieurs pages
 
+### Iframes
+
 Alors, ceci est une méthode un peu laborieuse pour arriver à créer une page avec votre header/footer tout seul et pour ensuite le répéter sur toutes vos pages. Cela vous permettra de ne pas avoir à modifier toutes vos pages si vous avez besoin d'éffectuer un changement dans votre header/footer.
 
 Nous allons utiliser une `iframe`. C'est une sorte de fenêtre sur votre page qui affiche une autre page. 
@@ -55,11 +57,11 @@ Nous allons utiliser une `iframe`. C'est une sorte de fenêtre sur votre page qu
 6. Placez le code suivant dans votre `style.css`: `iframe[seamless]{border: 0; width: 100%;}`
 7. Tadaamm! Vous avez votre header qui s'affiche.
 
-### Petite précision
+#### Petite précision
 
 Cette méthode est plus un hack qu'une bonne pratique. On n'a pas encore vu les outils nécessaire quant à la réalisation de composant réutilisable. Du coup, il faut un petit peu trafiquer le code pour arriver à nos fins.
 
-#### Le style de header/footer
+##### Le style de header/footer
 
 Même si votre header/footer s'affiche sur votre page index sur laquelle vous avez lié votre feuille de style, elle est tout de même considérer comme une autre page. N'oubliez donc pas  de lier votre feuille de style dans header/footer aussi. Pour ce faire, vous pouvez utiliser la fonction `@import`de CSS pour importer votre feuille de style dans la feuille de style de header/footer.
 
@@ -67,15 +69,15 @@ Même si votre header/footer s'affiche sur votre page index sur laquelle vous av
 @import "style.css";
 ```
 
-#### Le background-color de body
+##### Le background-color de body
 
 Il est également possible que votre header/footer s'affiche en prenant en compte le background-color définit dans votre feuille de style principale et du coup vous aurez un gros bloc de cette couleur qui se place par dessus certains éléments sur votre page. Pour ce faire précisez dans la feuille de style de header/footer que le background-color doit être transparent. `body{background-color: transparent;}`
 
-#### Les liens
+##### Les liens
 
 Si vous avez des liens dans votre header/footer, ceux-ci vont s'ouvrir dans votre iframe par défaut. Pour changer cela il faut ajouter un attribut `target:_top` à vos liens.
 
-### Exemple d'utilisation
+#### Exemple d'utilisation
 
 `index.html`
 
@@ -119,3 +121,37 @@ body{
   background-color: transparent;
 }
 ```
+
+### En Jquery
+
+Voici une autre solution en Jquery qui est plus simple à mettre en place que les iframes vue plus haut.
+
+Ajouter cette balise scripts à votre `<head>` pour inclure Jquerry à **chacune de vos pages** (index/discover/comments).
+
+```html
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+```
+
+Créez une page `script.js`et ajoutez ce bout de code.
+
+```js
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+```
+
+NPO: ajouter la ligne qui permet d'inclure votre page script à **chacune de vos pages**.
+
+```html
+<script src="script.js"></script>
+```
+
+Ensuite il faut ajouter une `div` avec les ID définit plus haut à **chacune de vos pages** (index/discover/comments) pour définir l'endroit où le contenu de vos pages header et footer apparaîtront.
+
+```html
+<div id="header"></div>
+<div id="footer"></div>
+```
+
+Vous pouvez maintenant créer une page `header.html` et `footer.html` et elles seront incluses à l'endroit où vous avez placé votre `div`.
