@@ -122,14 +122,14 @@ body{
 }
 ```
 
-### En Jquerry
+### En Jquery
 
 Voici une autre solution sur laquelle on ne va pas passer des heures au niveaux théorie, mais en tout cas elle est fonctionnelle est plus simple à mettre en place que les iframes vue plus haut.
 
 Ajouter cette balise scripts à votre `<head>` pour inclure Jquerry à **chacune de vos pages** (index/discover/comments).
 
 ```html
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crosso
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 ```
 
 Créez une page `script.js`et ajoutez ce bout de code.
